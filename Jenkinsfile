@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     tools {
-        maven 'localMaven' 
+        maven 'Maven' 
     }
     stages {
         stage('BUILD') {
@@ -11,13 +11,13 @@ pipeline {
         }
         stage('TEST'){
             steps{
-                build 'payslip-test'
+                build 'first-test'
             }
         }
         stage('DEPLOY'){
             steps{
-                build 'payslip-build'
-                build 'payslip-deploy'
+                build 'first-build'
+                build 'first-deploy'
             }
         }
     }
